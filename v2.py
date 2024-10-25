@@ -87,7 +87,6 @@ def test_upload_dog(breed):
  except Exception as e:
  pytest.fail(f"Test failed due to errors: {e}")
 
-```
 
 ### Основные изменения:
 
