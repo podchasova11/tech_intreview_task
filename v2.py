@@ -1,6 +1,10 @@
-Конечно! Я внесу дополнительные правки, чтобы улучшить обработку ошибок, структуру и безопасность токена. Вот обновленный код:
 
-```pythonimport randomimport pytestimport requestsimport osclass YaUploader:
+import random
+import pytest 
+import requests 
+import os
+
+class YaUploader:
  def __init__(self, token):
  self.token = token self.headers = {
  'Content-Type': 'application/json',
