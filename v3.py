@@ -1,19 +1,12 @@
 
 from __future__ import absolute_import, division, print_function, unicode_literals
-import sys
-if sys.version_info >= (3, 0):
-    # For Python 3
-    from urllib import request as urlrequest, parse as urlparse
-else:
-    # For Python 2
-    import urllib as urlrequest
-    import urlparse
+
+from urllib import request as urlrequest, parse as urlparse
 import json
 
 
 class DogAPI(object):
     def _api_request(self, endpoint):
-        # print(self._build_url(endpoint)) # Useful for debugging, but not enough to implement a logger
         return json.loads(urlrequest.urlopen(
             urlparse.urljoin("https://dog.ceo/api/", endpoint)
         ).read().decode("utf-8"))
@@ -36,7 +29,6 @@ class DogAPI(object):
             return self._api_request("breed/{}/{}/images/random".format(breed, subbreed))
 
 
-
 if __name__ == "__main__":
     from pprint import pprint
     from random import choice
@@ -46,3 +38,4 @@ if __name__ == "__main__":
     pprint(dogapi.random(choice(breeds)))
     pprint(dogapi.list_images(choice(breeds)))
     pprint(dogapi.random())
+    
