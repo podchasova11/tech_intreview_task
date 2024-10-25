@@ -1,4 +1,12 @@
- def __init__(self, token):  
+
+import random
+import pytest 
+import requests 
+import os
+
+class YaUploader:
+
+def __init__(self, token):  
  self.token = token self.headers = {  
  'Content-Type': 'application/json',  
  'Accept': 'application/json',  
